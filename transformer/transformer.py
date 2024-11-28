@@ -80,8 +80,8 @@ if __name__ == "__main__":
     print(f"Transformer parameter: num_heads={num_heads}, num_layers={num_layers}, d_model={d_model}, dropout={dropout}")
 
     # Data Load
-    input_gene_expression_path = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/preprocessing/output_data/gene_expression_afterprocess.csv'
-    input_confidence_cells_path = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/metaclustering/output_data/TopConfidence_cells.csv'
+    input_gene_expression_path = './scMCTL-main/preprocessing/output_data/gene_expression_afterprocess.csv'
+    input_confidence_cells_path = './scMCTL-main/metaclustering/output_data/TopConfidence_cells.csv'
     gene_expression_data = pd.read_csv(input_gene_expression_path, index_col=0).transpose()
     confidence_cells = pd.read_csv(input_confidence_cells_path)
     train_cell_names = confidence_cells['cell_name'].values
