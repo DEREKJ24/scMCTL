@@ -2,7 +2,7 @@ scMCTL is an innovative clustering algorithm that seamlessly integrates multi-di
 
 scMCTL employs a multi-layer dimensionality reduction strategy to construct an initial clustering framework, establishing a robust consensus clustering structure. Through a voting mechanism embedded in the meta-clustering process, high-confidence cells are selected from the initial clustering results, providing precise training labels for the Transformer model. This enables the model to capture complex dependencies in gene expression data, significantly enhancing clustering accuracy and reliability.
 
-**Step 1: Data Preprocessing**
+**Step 1: Data Preprocessing**  
   Input: Raw gene expression matrix (CSV format).  
   Output: Processed gene expression matrix and a subset of 2000 highly variable genes.  
   Script: preprocessing/preprocessing.R  
