@@ -8,7 +8,7 @@ from sklearn.decomposition import PCA
 
 def run_r_script(script_path, args=None):
     """General function for running R script"""
-    rscript_path = r'C:\Program Files\R\R-4.3.1\bin\Rscript.exe'  # Replace with actual path
+    rscript_path = r'.\R-4.3.1\bin\Rscript.exe'  # Replace with actual path
     cmd = [rscript_path, script_path]
     if args:
         cmd += args
@@ -101,7 +101,7 @@ def step_4_transformer(output_predictions_path, num_heads, num_layers, d_model, 
 
 if __name__ == "__main__":
     # User configuration parameters
-    raw_data_path = input("Please enter the path of the original gene expression matrix (for example: E:/scMCTL-main/preprocessing/input_data/GSE247600.csv):")
+    raw_data_path = input("Please enter the path of the original gene expression matrix (for example: E:/scMCTL-main/preprocessing/input_data/SimCell.csv):")
     confidence_ratio = float(input("Please enter the confidence ratio according to the dataset size (range 0-1, default: 0.5): ") or 0.5)
     num_heads = int(input("Please enter the number of multi head attention heads of the Transformer model according to the dataset size (default: 8): ") or 8)
     num_layers = int(input("Please enter the number of Transformer encoder layers according to the data set size (default: 4): ") or 4)
@@ -109,24 +109,24 @@ if __name__ == "__main__":
     dropout = float(input("Please refer to Dropout probability (default: 0.1) based on dataset size:") or 0.1)
 
     # Step 1
-    preprocessing_script = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/preprocessing/preprocessing.R'
-    output_processed_path = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/preprocessing/output_data/gene_expression_afterprocess.csv'
-    output_variable_genes_path = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/preprocessing/output_data/gene_expression_2000genes.csv'
+    preprocessing_script = './scMCTL-main/scMCTL-main/preprocessing/preprocessing.R'
+    output_processed_path = './scMCTL-main/scMCTL-main/preprocessing/output_data/gene_expression_afterprocess.csv'
+    output_variable_genes_path = './scMCTL-main/scMCTL-main/preprocessing/output_data/gene_expression_2000genes.csv'
 
     # Step 2
     pca_file_path = output_variable_genes_path
     dimensions_list = [30, 35, 40, 45, 50]
     max_k = 20
-    clustering_script = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/clustering/PCA_multiK_cluster.py'
+    clustering_script = './scMCTL-main/clustering/PCA_multiK_cluster.py'
 
     # Step 3
-    input_clusters_path = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/clustering/output_data/multi_clusts_combined.csv'
-    metaclustering_script = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/metaclustering/Main_wMetaC.R'
+    input_clusters_path = './scMCTL-main/clustering/output_data/multi_clusts_combined.csv'
+    metaclustering_script = './scMCTL-main/metaclustering/Main_wMetaC.R'
     target_cluster = int(input("Please enter the number of target clusters (positive integer, default: 8): ") or 8)
 
     # Step 4
-    output_predictions_path = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/transformer/output_data/predicted_clusters_full.csv'
-    transformer_script = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/transformer/transformer.py'
+    output_predictions_path = './scMCTL-main/transformer/output_data/predicted_clusters_full.csv'
+    transformer_script = './scMCTL-main/transformer/transformer.py'
 
     # Execution
     step_1_preprocessing(raw_data_path, output_processed_path, output_variable_genes_path, preprocessing_script)
