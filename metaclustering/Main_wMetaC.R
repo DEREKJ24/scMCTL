@@ -23,7 +23,7 @@ cluster_columns <- colnames(data)[grep("cluster_dim", colnames(data))]
 nC <- data[, cluster_columns]
 
 # Load the script containing the custom function "wMetaC_with_confidence"
-source("E:/scMCTL-main/metaclustering/my_wMetaC.R")
+source("./scMCTL-main/metaclustering/my_wMetaC.R")
 
 
 # Run the wMetaC_with_confidence function
