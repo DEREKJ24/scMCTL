@@ -24,8 +24,8 @@ def main():
     optimal_k_values_list = eval(sys.argv[1])  # Combination of K values entered by the user
 
     # Path Configuration
-    csv_file_path = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/preprocessing/output_data/gene_expression_2000genes.csv'
-    result_csv_path = 'D:/GOOGLE_Download/scMCTL-main/scMCTL-main/clustering/output_data/multi_clusts_combined.csv'
+    csv_file_path = './scMCTL-main/preprocessing/output_data/gene_expression_2000genes.csv'
+    result_csv_path = './scMCTL-main/clustering/output_data/multi_clusts_combined.csv'
 
     # Data reading
     feature_matrix = pd.read_csv(csv_file_path, index_col=0)
