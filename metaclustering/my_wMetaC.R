@@ -72,12 +72,12 @@ wMetaC_with_confidence <- function(nC, hmethod = hmethod, enN.cluster = enN.clus
   cat("The optimal number of meta clusters:", N.cluster, "\n")
 
   
-  file_path <- "D:/GOOGLE_Download/scMCTL-main/scMCTL-main/metaclustering/output_data/Voting_cluster.csv"
+  file_path <- "./scMCTL-main/metaclustering/output_data/Voting_cluster.csv"
   write.csv(newnC, file = file_path, row.names = FALSE)
   cat("CSV file successfully saved to:", file_path, "\n")
   
   
-  file_path <- "D:/GOOGLE_Download/scMCTL-main/scMCTL-main/metaclustering/output_data/Voting_cluster.csv"
+  file_path <- "./scMCTL-main/metaclustering/output_data/Voting_cluster.csv"
   newnC <- read.csv(file = file_path, header = TRUE, encoding='utf-8')
   RP_times <- ncol(newnC)
 
@@ -102,11 +102,11 @@ wMetaC_with_confidence <- function(nC, hmethod = hmethod, enN.cluster = enN.clus
   }
 
   newnC <- cbind(newnC, result_df)
-  pca_data <- read.csv("D:/GOOGLE_Download/scMCTL-main/scMCTL-main/clustering/output_data/multi_clusts_combined.csv", encoding='utf-8')
+  pca_data <- read.csv("./scMCTL-main/clustering/output_data/multi_clusts_combined.csv", encoding='utf-8')
   adjusted_data <- cbind(newnC, cell_name = pca_data[, 1])
-  write.csv(adjusted_data, "D:/GOOGLE_Download/scMCTL-main/scMCTL-main/metaclustering/output_data/adjusted_Voting_cluster_with_cells.csv", row.names = FALSE)
+  write.csv(adjusted_data, "./scMCTL-main/metaclustering/output_data/adjusted_Voting_cluster_with_cells.csv", row.names = FALSE)
   
-  adjusted_file_path <- "D:/GOOGLE_Download/scMCTL-main/scMCTL-main/metaclustering/output_data/adjusted_Voting_cluster_with_cells.csv"
+  adjusted_file_path <- "./scMCTL-main/metaclustering/output_data/adjusted_Voting_cluster_with_cells.csv"
   adjusted_nC <- read.csv(file = adjusted_file_path, header = TRUE, encoding='utf-8')
 
   percent1_df <- data.frame(matrix(0, nrow = 0, ncol = ncol(adjusted_nC)))
@@ -123,7 +123,7 @@ wMetaC_with_confidence <- function(nC, hmethod = hmethod, enN.cluster = enN.clus
     percent1_df <- rbind(percent1_df, top1_percent)
   }
 
-  TOP_percent_path <- "D:/GOOGLE_Download/scMCTL-main/scMCTL-main/metaclustering/output_data/TopConfidence_cells.csv"
+  TOP_percent_path <- "./scMCTL-main/metaclustering/output_data/TopConfidence_cells.csv"
   write.csv(percent1_df, file = TOP_percent_path, row.names = FALSE)
   cat("CSV file successfully saved to:", TOP_percent_path, "\n")
 
