@@ -1,0 +1,8 @@
+"V1","V2","V3","V4","V5","V6","V7","V8","V9","V10","final_cluster","Cluster_1","Cluster_2","Cluster_3","Cluster_4","Cluster_5","Cluster_6","Cluster_7","cell_name"
+1,1,1,1,1,1,1,1,2,1,1,0.9,0.1,0,0,0,0,0,"GGACGTAGTTGACTAT"
+2,2,2,2,2,2,2,2,2,2,2,0,1,0,0,0,0,0,"GGCCAGAGCATCAAGC"
+3,3,3,3,3,3,3,3,3,3,3,0,0,1,0,0,0,0,"GTTAGGACGTAGAATG"
+4,4,4,4,4,4,4,4,4,4,4,0,0,0,1,0,0,0,"AGGTCGGAAGCATTGA"
+5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,1,0,0,"AATATATCTTCTGGTT"
+6,6,6,6,6,6,6,6,6,6,6,0,0,0,0,0,1,0,"TCCTCCGTCTTGAGTT"
+7,7,7,7,7,7,7,7,7,7,7,0,0,0,0,0,0,1,"ATTCTCTTTCATGCTG"
